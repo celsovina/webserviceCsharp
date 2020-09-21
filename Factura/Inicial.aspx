@@ -10,26 +10,67 @@
     </head>
     <body>
         
-       <div class="container-sm border">
+       <div class="container p-3 my-3 bg-dark text-white">
            <h1>Ingreso de datos</h1>
-            <form action="Servlet1" id="form1" runat="server">
-                <label for="uname">Nombres:</label>
-                <asp:TextBox type="text" class="form-control" id="Nombre" runat="server" placeholder="Ingrese sus nombre"></asp:TextBox>   
-                <label for="uname">Apellido:</label>
-                <asp:TextBox type="text" class="form-control" id="Apellido" runat="server" placeholder="Ingrese sus apellidos" > </asp:TextBox>  
-                <label for="uname">Cargo:</label>
-                <asp:TextBox type="text" class="form-control" id="Cargo" runat="server" placeholder="Ingrese su cargo" >   </asp:TextBox>
-                <label for="uname">Sueldo:</label>
-                <asp:TextBox type="number" class="form-control" id="sueldo" runat="server" placeholder="Ingrese su sueldo" >   </asp:TextBox>
-                <label for="uname">Domingos laborados:</label>
-                <asp:TextBox type="number" class="form-control" id="domingos" runat="server" placeholder="Digite la cantidad de domingos laborados">  </asp:TextBox> 
-                <label for="uname">Fallas injustificadas:</label>
-                <asp:TextBox type="number" class="form-control" id="fallas" runat="server" placeholder="Digite cuantas fallas injustificadas tiene"> </asp:TextBox>  
-                <label for="uname">Horas extras:</label>
-                <asp:TextBox type="number" class="form-control" id="horasext" runat="server" placeholder="Digite cuantas horas extras laboro"></asp:TextBox>
-                <br><asp:Button ID="btnCalcular" runat="server" Text="Enviar Datos" class ="btn btn-success" OnClick="Button1_Click"/>
-            </form>
+            <form id="form1" runat="server">
+                <label for="uname">Identificacion:</label><asp:TextBox type="text" class="form-control" id="txtIdent" runat="server" placeholder="Ingrese sus nombre" Width="215px"></asp:TextBox>
+                <div class="left">
+                    <label for="uname">Nombres:</label><br />
+                    <asp:TextBox type="text" class="form-control" id="Nombre" runat="server" placeholder="Ingrese sus nombre" Width="300px"></asp:TextBox>
+                    <Label for="uname">Cargo:</Label><br />
+                    <asp:DropDownList ID="DropDownListCargo" runat="server" AutoPostBack="True" Width="300px" class="custom-select" OnSelectedIndexChanged="DropDownListCargo_SelectedIndexChanged" OnTextChanged="DropDownListCargo_TextChanged">
+                        <asp:ListItem>Asesor</asp:ListItem>
+                        <asp:ListItem>Mercaderista</asp:ListItem>
+                        <asp:ListItem>Supervisor</asp:ListItem>
+                        <asp:ListItem>Coordinador</asp:ListItem>
+                    </asp:DropDownList><br />
+                    <label for="uname">Domingos laborados:</label><br />
+                    <asp:DropDownList ID="DropDownListDom" runat="server" Width="300px" class="custom-select">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                    </asp:DropDownList><br />
+                    <label for="uname">Horas extras:</label>
+                    <asp:TextBox type="number" class="form-control" id="horasext" runat="server" placeholder="Digite cuantas horas extras laboro" Width="300px"></asp:TextBox><br />
+                    <asp:Button ID="btnCalcular" runat="server" Text="Enviar Datos" class ="btn btn-success" OnClick="Button1_Click"/>
+                </div>
+                <div class="right">
+                    <label for="uname">Apellido:</label>
+                    <asp:TextBox type="text" class="form-control" id="Apellido" runat="server" placeholder="Ingrese sus apellidos" Width="300px" ></asp:TextBox>  
+
+                    <label for="uname">Sueldo:</label>
+                    <asp:TextBox type="number" class="form-control" id="TextBoxSueldo" runat="server" placeholder="Ingrese su sueldo" Width="300px" BackColor="White" Enabled="False" ></asp:TextBox>
+
+                    <label for="uname">Fallas injustificadas:</label>
+                    <asp:TextBox type="number" class="form-control" id="fallas" runat="server" placeholder="Digite cuantas fallas injustificadas tiene" Width="300px"></asp:TextBox>  
+                </div><br />
+                </form>
        </div>
         
     </body>
 </html>
+<style>
+    .left {
+        float:left;
+        height: 300px;
+        width: 310px;
+    }
+    .right {
+        float:right;
+        height: 300px;
+        width: 310px;
+    }
+    #form1 {
+        height: 446px;
+        width: 650px;
+        float:initial;
+        align-content:center;
+        align-items:center;
+    }
+    body {
+        align-content:center;
+        align-items:center;
+    }
+</style>

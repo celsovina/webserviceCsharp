@@ -19,5 +19,47 @@ namespace Factura
             ServiceReference1.WebService1SoapClient Servicio1 = new ServiceReference1.WebService1SoapClient();
 
         }
+
+        protected void DropDownListCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Cargo = DropDownListCargo.SelectedValue;
+            switch (Cargo)
+            {
+                case "Asesor":
+                    TextBoxSueldo.Text = "877900";
+                    break;
+                case "Mercaderista":
+                    TextBoxSueldo.Text = "1100900";
+                    break;
+                case "Supervisor":
+                    TextBoxSueldo.Text = "1609900";
+                    break;
+                case "Coordinador":
+                    TextBoxSueldo.Text = "2100900";
+                    break;
+
+            }
+        }
+
+        protected void DropDownListCargo_TextChanged(object sender, EventArgs e)
+        {
+            string Cargo = DropDownListCargo.SelectedValue;
+            switch (Cargo)
+            {
+                case "Asesor":
+                    TextBoxSueldo.Text = "877900";
+                    break;
+                case "Mercaderista":
+                    TextBoxSueldo.Text = "1100900";
+                    break;
+                case "Supervisor":
+                    TextBoxSueldo.Text = "1609900";
+                    break;
+                case "Coordinador":
+                    TextBoxSueldo.Text = "2100900";
+                    break;
+
+            }
+        }
     }
 }
