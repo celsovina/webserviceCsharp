@@ -27,12 +27,6 @@ namespace Factura
         int SubTr = 0;
         int Desc = 0;
 
-        //[WebMethod]
-        //public string HelloWorld()
-        //{
-        //    return "Hola a todos";
-        //}
-
         [WebMethod]
         public string CalculoSueldo(int sueldo, int domingos, int fallas, int horasext)
         {
