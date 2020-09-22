@@ -59,16 +59,33 @@ namespace Factura
             return Datos;
         }
         [WebMethod]
-        public String Persona(string nombre, string apellidos)
+        public List<string> Persona(string ident, string nombre, string apellidos, string cargo)
         {
-            return nombre + " " + apellidos;
+            List<string> DatosPersona = new List<string>();
+            DatosPersona.Add(ident);
+            DatosPersona.Add(nombre + " " + apellidos);
+            DatosPersona.Add(cargo);
+            return DatosPersona;
         }
-
         [WebMethod]
-        public string cargo(string Puesto)
+        public List<string> Devengados(string Domingos)
         {
-            return Puesto;
-
+            List<string> DatosDev = new List<string>();
+            DatosDev.Add(Domingos);
+            DatosDev.Add(TotHrExt.ToString());
+            DatosDev.Add(SubTr.ToString());
+            DatosDev.Add(TotDed.ToString());
+            return DatosDev;
+        }
+        [WebMethod]
+        public List<string> Deducciones(string Fallas)
+        {
+            List<string> DatosDed = new List<string>();
+            DatosDed.Add(Fallas);
+            DatosDed.Add(Salud.ToString());
+            DatosDed.Add(Pension.ToString());
+            DatosDed.Add(TotDed.ToString());
+            return DatosDed;
         }
     }
 }
