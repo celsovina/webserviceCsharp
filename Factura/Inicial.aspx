@@ -18,7 +18,7 @@
                     <label for="uname">Nombres:</label><br />
                     <asp:TextBox type="text" class="form-control" id="Nombre" runat="server" placeholder="Ingrese sus nombre" Width="300px"></asp:TextBox>
                     <Label for="uname">Cargo:</Label><br />
-                    <asp:DropDownList ID="DropDownListCargo" runat="server" AutoPostBack="True" Width="300px" class="custom-select" OnSelectedIndexChanged="DropDownListCargo_SelectedIndexChanged" OnTextChanged="DropDownListCargo_TextChanged">
+                    <asp:DropDownList ID="DropDownListCargo" runat="server" AutoPostBack="True" Width="300px" class="custom-select" OnSelectedIndexChanged="DropDownListCargo_SelectedIndexChanged">
                         <asp:ListItem>Asesor</asp:ListItem>
                         <asp:ListItem>Mercaderista</asp:ListItem>
                         <asp:ListItem>Supervisor</asp:ListItem>
@@ -40,10 +40,11 @@
                     <label for="uname">Apellido:</label>
                     <asp:TextBox type="text" class="form-control" id="Apellido" runat="server" placeholder="Ingrese sus apellidos" Width="300px" ></asp:TextBox>  
 
-                    <label for="uname">Sueldo:</label>
-                    <asp:TextBox type="number" class="form-control" id="TextBoxSueldo" runat="server" placeholder="Ingrese su sueldo" Width="300px" BackColor="White" Enabled="False" ></asp:TextBox>
-
+                    <label for="uname">Sueldo:</label><br />
+                    <asp:Label ID="LabelSueldo" runat="server"></asp:Label>
+                    <br />
                     <label for="uname">Fallas injustificadas:</label>
+                    
                     <asp:TextBox type="number" class="form-control" id="fallas" runat="server" placeholder="Digite cuantas fallas injustificadas tiene" Width="300px"></asp:TextBox>  
                 </div><br />
                 </form>

@@ -23,43 +23,39 @@ namespace Factura
         protected void DropDownListCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string Cargo = DropDownListCargo.SelectedValue;
+            int ValorCargo = 0;
+            string Valor;
             switch (Cargo)
             {
+
+                case "Seleccione":
+                    Valor = "$0";
+                    LabelSueldo.Text = Valor;
+                    ValorCargo = 0;
+                    break;
                 case "Asesor":
-                    TextBoxSueldo.Text = "877900";
+                    Valor = "$877.900";
+                    LabelSueldo.Text = Valor;
+                    ValorCargo = 877900;
                     break;
                 case "Mercaderista":
-                    TextBoxSueldo.Text = "1100900";
+                    Valor = "$1'100.900";
+                    LabelSueldo.Text = Valor;
+                    ValorCargo = 1100900;
                     break;
                 case "Supervisor":
-                    TextBoxSueldo.Text = "1609900";
+                    Valor = "$1'600.900";
+                    LabelSueldo.Text = Valor;
+                    ValorCargo = 1600900;
                     break;
                 case "Coordinador":
-                    TextBoxSueldo.Text = "2100900";
+                    Valor = "2'100.900";
+                    LabelSueldo.Text = Valor;
+                    ValorCargo = 2100900;
                     break;
 
             }
         }
 
-        protected void DropDownListCargo_TextChanged(object sender, EventArgs e)
-        {
-            string Cargo = DropDownListCargo.SelectedValue;
-            switch (Cargo)
-            {
-                case "Asesor":
-                    TextBoxSueldo.Text = "877900";
-                    break;
-                case "Mercaderista":
-                    TextBoxSueldo.Text = "1100900";
-                    break;
-                case "Supervisor":
-                    TextBoxSueldo.Text = "1609900";
-                    break;
-                case "Coordinador":
-                    TextBoxSueldo.Text = "2100900";
-                    break;
-
-            }
-        }
     }
 }
